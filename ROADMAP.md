@@ -13,7 +13,7 @@ Al seguito una serie di risorse di approfondimento:
  - [ ] [Video possibili utilizzi](https://www.youtube.com/watch?v=JI6odNTv3Dc)
  - [ ] [Video panoramica sui serivizi offerti](https://www.youtube.com/watch?v=2U58uPfD4RM)
 
-Tutti questi contenuti dovrebbero essere letti/visti e sintetizzati in maniera uniforme e ordinata.
+Tutti questi contenuti dovrebbero essere letti/visti e sintetizzati in maniera uniforme e ordinata in una relazione; e successivamente ulteriormente sintetizzati in una presentazione.
 
 
 ## Parte Sperimentale 
