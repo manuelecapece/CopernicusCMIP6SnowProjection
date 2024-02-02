@@ -24,8 +24,6 @@ zeroRows = all(snw_bas(:,:,1) == 0, 2);
 snw_bas(zeroRows, :,:) = [];
 zeroColumns = all(snw_bas(:,:,1) == 0, 1);
 snw_bas(:, zeroColumns,:) = [];
-
-disp(newline)
 disp(['Dimensioni matrice filtrata sn_bas : ' num2str(size(snw_bas))]);
 
 end

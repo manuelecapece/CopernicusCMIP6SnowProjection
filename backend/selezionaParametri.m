@@ -1,4 +1,4 @@
-function [experiment,variable,year,modelsAvaible] = selezionaParametri(sceltaEsperimento,sceltaVariabile,yearStart,yearEnd)
+function [experiment,variable,year,modelsAvaible] = selezionaParametri(sceltaEsperimento,sceltaVariabile,startYear,endYear)
 %Restituisce l'esperimento e la variabile selezionata dall'utente e la
 %lista di modelli disponibili per la selezione
 
@@ -11,16 +11,16 @@ end
 if(sceltaVariabile < 1 || sceltaVariabile > 3)
     error("Scelta variabile non valida");
 end
-if(yearStart < 2015 || yearStart > 2099)
+if(startYear < 2015 || startYear > 2099)
     error("Anno di inizio non valido");
 end
-if(yearEnd < 2016 || yearEnd > 2100)
+if(endYear < 2016 || endYear > 2100)
     error("Anno di fine non valido");
 end
 
 experiment = experiments(sceltaEsperimento);
 variable = variable(sceltaVariabile);
-year = creaStringaAnni(yearStart,yearEnd);
+year = creaStringaAnni(startYear,endYear);
 
 dizionarioModelli.ssp1_1_9_name   = ["EC-Earth3 (Europe)" , "EC-Earth3-Veg (Europe)" , "EC-Earth3-Veg-LR (Europe)" , "CNRM-ESM2-1 (France)" , "IPSL-CM6A-LR (France)"];
 dizionarioModelli.ssp1_2_6_name   = ["CNRM-CM6-1-HR (France)" , "CMCC-CM2-SR5 (Italy)" , "CMCC-ESM2 (Italy)", "HadGEM3-GC31-MM (UK)"];

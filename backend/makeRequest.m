@@ -13,10 +13,28 @@ datasetOptions.variable  = variable;
 datasetOptions.model  = model;
 datasetOptions.year = year; 
 
-downloadedFilePaths = climateDataStoreDownload(datasetName,datasetOptions);
+F = climateDataStoreDownloadAsync(datasetName,datasetOptions);
+
+fprintf('Data e ora di creazione: %s\n', datestr(F.CreateDateTime, 'yyyy-MM-dd hh:mm:ss'));
+stato = '';
+while (F.State ~= 'completed')
+    if(stato ~= F.State)
+        disp(['Stato richiesta: ', num2str(F.State)]);
+        stato = F.State;
+    end
+end
+
+F.wait();
+
+if F.State == "completed"
+    downloadedFilePaths = F.OutputArguments{1};
+    citation = F.OutputArguments{2};
+end
+
+fprintf('Data e ora di fine: %s\n', datetime(F.FinishDateTime,'Format','yyyy-MM-dd hh:mm:ss'));
+fprintf('Tempo di esecuzione : %s\n', F.RunningDuration);
 
 cd('..\')
-
 
 pathDataset = strcat('Dataset/',downloadedFilePaths(1));
 pathJson = strcat('Dataset/',downloadedFilePaths(2));
