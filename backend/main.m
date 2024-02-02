@@ -26,9 +26,13 @@ disp(['Modello selezionato: ',model])
 disp(newline)
 
 %Effettua la richiesta
-disp('Richiesta in corso, attendere la risposta del server...')
+disp('*********************************************************************************************')
+disp('*               Richiesta in corso, attendere la risposta del server...                     *')
+disp(newline)
 [pathDataset] = makeRequest(experiment,variable,model,year);
-disp('Richiesta completata!')
+disp(newline)
+disp('*               Richiesta completata!                                                        *')
+disp('*********************************************************************************************')
 disp(newline)
 
 fprintf('%s\n%s\n','Percorso dataset netCDF scaricato',pathDataset)
