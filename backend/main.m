@@ -3,6 +3,10 @@ clear all;
 close all;
 %% Richiesta API modello projections-cmip6
 
+%TODO inserisci file .cdsapirc in c:/Users/user
+%TODO usa async per richiesta
+%TODO nome cartelle
+
 % % Query di esempio 1
 % experiment = "ssp2_4_5"; %=3
 % variable  = "snowfall_flux"; %=2
@@ -11,11 +15,11 @@ close all;
 % yearEnd = 2022;
 
 %Seleziona parametri
-[experiment,variable,year,models] = selezionaParametri(3,2,2015,2022);
+[experiment,variable,year,models] = selezionaParametri(4,3,2015,2100);
 fprintf('Parametri selezionati:\nEsperimento: %s \nVariabile: %s \nAnno inizio: %s \nAnno fine: %s\n', experiment, variable, num2str(year(1)), num2str(year(end)));
 disp('Lista dei modelli disponibili per il parametro selezionato:');
 disp(models);
-
+%Seleziona modello
 [model] = selezionaModello(models,1);
 disp(['Modello selezionato: ',model])
 disp(newline)
@@ -38,8 +42,9 @@ fprintf('Dimensioni matrice snw: \nLatitudini: %s, Longitudini: %s, Time: %s\n',
 T = datetime(1850,1,1,'Format','MMM-yyyy') + days(time);
 
 %Filtraggio dei dati sulle coordinate geografiche della Basilicata
-[snw_bas] = filtraDati(lat,lon,snw);
+[snow_basilicata] = filtraDati(lat,lon,snw);
 
-%% Plottaggio dati
-plotDati(snw,variable,T)
+%% Plotting dati
+
+plotDati(snow_basilicata,variable,T)
 

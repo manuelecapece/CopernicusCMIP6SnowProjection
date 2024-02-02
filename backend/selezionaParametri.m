@@ -22,14 +22,14 @@ experiment = experiments(sceltaEsperimento);
 variable = variable(sceltaVariabile);
 year = creaStringaAnni(yearStart,yearEnd);
 
-dizionarioModelli.ssp1_1_9_name   = ["EC-Earth3 (Europe)","EC-Earth3-Veg (Europe)", "EC-Earth3-Veg-LR (Europe)","CNRM-ESM2-1 (France)", "IPSL-CM6A-LR (France)"];
-dizionarioModelli.ssp1_2_6_name   = ["CNRM-CM6-1-HR (France)","CMCC-CM2-SR5 (Italy)","CMCC-ESM2 (Italy)","HadGEM3-GC31-MM (UK)"];
-dizionarioModelli.ssp4_3_4_name   = ["EC-Earth3 (Europe)", "CNRM-ESM2-1 (France)","IPSL-CM6A-LR (France)"];
-dizionarioModelli.ssp5_3_4os_name = ["EC-Earth3 (Europe)","CNRM-ESM2-1 (France)","IPSL-CM6A-LR (France)"];
-dizionarioModelli.ssp2_4_5_name   = ["EC-Earth3-CC (Europe)","CNRM-CM6-1-HR (France)","CMCC-CM2-SR5 (Italy)","CMCC-ESM2 (Italy)","HadGEM3-GC31-LL (UK)"];
-dizionarioModelli.ssp4_6_0_name   = ["CNRM-ESM2-1 (France)","IPSL-CM6A-LR (France)"];
-dizionarioModelli.ssp3_7_0_name   = ["EC-Earth3-AerChem (Europe)","","EC-Earth3-Veg-LR (Europe)","CNRM-CM6-1 (France)","CNRM-CM6-1-HR (France)","IPSL-CM5A2-INCA (France)","IPSL-CM6A-LR (France)","CMCC-CM2-SR5 (Italy)"];
-dizionarioModelli.ssp5_8_5_name   = ["EC-Earth3-CC (Europe)","EC-Earth3-Veg-LR (Europe)", "CNRM-CM6-1 (France)","CNRM-CM6-1-HR (France)","CNRM-ESM2-1 (France)","IPSL-CM6A-LR (France)","CMCC-CM2-SR5 (Italy)","CMCC-ESM2 (Italy)","HadGEM3-GC31-LL (UK)","HadGEM3-GC31-MM (UK)"];
+dizionarioModelli.ssp1_1_9_name   = ["EC-Earth3 (Europe)" , "EC-Earth3-Veg (Europe)" , "EC-Earth3-Veg-LR (Europe)" , "CNRM-ESM2-1 (France)" , "IPSL-CM6A-LR (France)"];
+dizionarioModelli.ssp1_2_6_name   = ["CNRM-CM6-1-HR (France)" , "CMCC-CM2-SR5 (Italy)" , "CMCC-ESM2 (Italy)", "HadGEM3-GC31-MM (UK)"];
+dizionarioModelli.ssp4_3_4_name   = ["EC-Earth3 (Europe)" , "CNRM-ESM2-1 (France)" , "IPSL-CM6A-LR (France)"];
+dizionarioModelli.ssp5_3_4os_name = ["EC-Earth3 (Europe)" , "CNRM-ESM2-1 (France)", "IPSL-CM6A-LR (France)"];
+dizionarioModelli.ssp2_4_5_name   = ["EC-Earth3-CC (Europe)" , "CNRM-CM6-1-HR (France)" , "CMCC-CM2-SR5 (Italy)" , "CMCC-ESM2 (Italy)" , "HadGEM3-GC31-LL (UK)"];
+dizionarioModelli.ssp4_6_0_name   = ["CNRM-ESM2-1 (France)" , "IPSL-CM6A-LR (France)"];
+dizionarioModelli.ssp3_7_0_name   = ["EC-Earth3-AerChem (Europe)" , "EC-Earth3-Veg-LR (Europe)" , "CNRM-CM6-1 (France)" , "CNRM-CM6-1-HR (France)" , "IPSL-CM5A2-INCA (France)" , "IPSL-CM6A-LR (France)" , "CMCC-CM2-SR5 (Italy)"];
+dizionarioModelli.ssp5_8_5_name   = ["EC-Earth3-CC (Europe)" , "EC-Earth3-Veg-LR (Europe)" , "CNRM-CM6-1 (France)" , "CNRM-CM6-1-HR (France)" , "CNRM-ESM2-1 (France)" , "IPSL-CM6A-LR (France)" , "CMCC-CM2-SR5 (Italy)" , "CMCC-ESM2 (Italy)" , "HadGEM3-GC31-LL (UK)","HadGEM3-GC31-MM (UK)"];
 
 switch experiment
     case "ssp1_1_9"

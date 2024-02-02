@@ -12,7 +12,7 @@ snw_mean = reshape(snw_mean,[size(snw_mean,3),1]);
 figure();
 bar(T,snw_mean);
 xlabel('Time [month]');
-ylabel('Surface snow amount [kg m^-2]');
+ylabel('Surface snow amount [kg m^{-2}]');
 title('Media annua della quantita di neve per superficie');
 
 end
