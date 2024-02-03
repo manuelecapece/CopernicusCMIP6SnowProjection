@@ -1,4 +1,4 @@
-function [pathDataset] = makeRequest(experiment,variable,model,year)
+function [pathDataset,F] = makeRequest(experiment,variable,model,year)
 %Effettua la richiesta API, restituisce la struttura contentente le opzioni 
 %della richiesta API e il nome del dataset
 
@@ -15,6 +15,7 @@ datasetOptions.year = year;
 
 F = climateDataStoreDownloadAsync(datasetName,datasetOptions);
 
+disp(newline)
 fprintf('Data e ora di creazione: %s\n', datestr(F.CreateDateTime, 'yyyy-MM-dd hh:mm:ss'));
 stato = '';
 while (F.State ~= 'completed')

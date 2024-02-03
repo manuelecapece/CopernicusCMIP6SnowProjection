@@ -1,45 +1,65 @@
-function [model_nameQuery] = selezionaModello(modelsAvaible,scelta)
+function [model_nameQuery] = selezionaModello(modelsAvaible,sceltaModello)
 %Restituisce il nome del modello selezionato tra quelli disponibili
 
-if(scelta < 1 || scelta > size(modelsAvaible,2))
+if(sceltaModello < 1 || sceltaModello > size(modelsAvaible,2))
     error('Scelta del modello non valida');
 end
 
-model = modelsAvaible(scelta);
+model = modelsAvaible(sceltaModello);
+
+m = Modelli;
 
 switch model
-
-    case "EC-Earth3 (Europe)"
-        model_nameQuery = 'ec_earth3';
-    case "EC-Earth3-CC (Europe)"
-        model_nameQuery = 'ec_earth3_cc';
-    case "EC-Earth3-Veg (Europe)"
-        model_nameQuery ='ec_earth3_veg' ;
-    case "EC-Earth3-Veg-LR (Europe)"
-        model_nameQuery = 'ec_earth3_veg_lr';
-    case "EC-Earth3-AerChem (Europe)"
+    %Modelli europei
+    case m.europa1
         model_nameQuery = 'ec_earth3_aerchem';
+    case m.europa2
+        model_nameQuery ='ec_earth3_veg' ;        
+    case m.europa3
+        model_nameQuery = 'ec_earth3';
+    case m.europa4
+        model_nameQuery = 'ec_earth3_cc';
+    case m.europa5
+        model_nameQuery = 'ec_earth3_veg_lr';
 
-    case "CMCC-CM2-SR5 (Italy)"
-        model_nameQuery = 'cmcc_cm2_sr5';
-    case "CMCC-ESM2 (Italy)"
-        model_nameQuery = 'cmcc_esm2';  
-
-    case "CNRM-ESM2-1 (France)"
-        model_nameQuery = 'cnrm_esm2_1';
-    case "CNRM-CM6-1 (France)"
-        model_nameQuery = 'cnrm_cm6_1';
-    case "CNRM-CM6-1-HR (France)"
+    %Modelli Francesi
+    case m.francia1
         model_nameQuery = 'cnrm_cm6_1_hr';
-    case "IPSL-CM6A-LR (France)"
-        model_nameQuery = 'ipsl_cm6a_lr'; 
-    case "IPSL-CM5A2-INCA (France)"
+    case m.francia2
+        model_nameQuery = 'ipsl_cm6a_lr';
+    case m.francia3
+        model_nameQuery = 'cnrm_cm6_1';
+    case m.francia4
+        model_nameQuery = 'cnrm_esm2_1';
+    case m.francia5
         model_nameQuery = 'ipsl_cm5a2_inca'; 
 
-    case "HadGEM3-GC31-MM (UK)"
-        model_nameQuery = 'hadgem3_gc31_mm';
-    case "HadGEM3-GC31-LL (UK)"
+    %Modelli Italiani
+    case m.italia1
+        model_nameQuery = 'cmcc_esm2';  
+    case m.italia2
+        model_nameQuery = 'cmcc_cm2_sr5';
+    %Modelli Tedeschi
+    case m.germania1
+        model_nameQuery = 'awi_cm_1_1_mr';  
+    case m.germania2
+        model_nameQuery = 'mpi_esm1_2_lr';  
+
+    %Modelli Norvegesi
+    case m.norvegia1
+        model_nameQuery = 'noresm2_mm';  
+    case m.norvegia2
+        model_nameQuery = 'noresm2_lm'; 
+       
+    %Modelli Inglesi
+    case m.inghilterra1
         model_nameQuery = 'hadgem3_gc31_ll';
+    case m.inghilterra2
+        model_nameQuery = 'hadgem3_gc31_mm';
+
+    %Modelli Svizzeri
+    case m.svizzera1
+        model_nameQuery = 'mpi_esm_1_2_ham';
 
 end
 

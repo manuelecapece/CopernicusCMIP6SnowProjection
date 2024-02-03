@@ -14,6 +14,7 @@ lon = netcdf.getVar(ncid,4);%Longitude
 lon_bnds = netcdf.getVar(ncid,5);%lon_bnds
 snw = netcdf.getVar(ncid,6);%Surface Snow Amount
 
+
 netcdf.close(ncid);
 
 end
