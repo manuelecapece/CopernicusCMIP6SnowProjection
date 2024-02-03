@@ -1,16 +1,16 @@
-function plotDati(snw,variabile,T)
+function plotDati(snw,variabile,T,time,year)
 %Plotta il grafico della variabile selezionata
 
 switch variabile
     case "snow_depth"
         % Creazione grafico Snow depth
-        plotSnowDepth(snw,T)
+        plotSnowDepth(snw,T,time)
     case "snowfall_flux"
         % Creazione grafico Snowfall flux
-        plotSnowfallFlux(snw,T)
+        plotSnowfallFlux(snw,T,time,year)
     case "surface_snow_amount"
         % Creazione grafico Surface snow amount
-        plotSurfaceSnowAmount(snw,T)
+        plotSurfaceSnowAmount(snw,T,time)
 end
 
 end

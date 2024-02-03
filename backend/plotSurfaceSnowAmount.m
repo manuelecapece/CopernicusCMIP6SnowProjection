@@ -1,4 +1,4 @@
-function plotSurfaceSnowAmount(snw,T)
+function plotSurfaceSnowAmount(snw,T,time)
 % Crea grafico della Surface snow amount [kg m^-2] media in Basilicata per mese.
 % Quantità di neve al suolo, esclusa quella sulla chioma delle piante 
 % o della vegetazione, per unità di superficie.
@@ -10,10 +10,21 @@ snw_mean = reshape(snw_mean,[size(snw_mean,3),1]);
 
 % Grafico a barre della quantita di neve in funzione del tempo
 figure();
-bar(T,snw_mean);
+bar(T,snw_mean,'barwidth', 1);
 xlabel('Time [month]');
 ylabel('Surface snow amount [kg m^{-2}]');
 title('Media annua della quantita di neve per superficie');
+ax = gca; % current axes
+ax.XTick = T;
+xtickformat('MMM-yyyy')
+
+% Grafico a linea della quantita di neve in funzione del tempo
+figure();
+plot(T,snw_mean);
+xlabel('Time [month]');
+ylabel('Surface snow amount [kg m^{-2}]');
+title('Media annua della quantita di neve per superficie');
+
 
 end
 

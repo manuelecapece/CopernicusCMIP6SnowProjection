@@ -110,7 +110,14 @@ switch experiment
                 modelsAvaible = dizionarioModelli.ssp3_7_0_surface_snow_amount;
         end
     case "ssp5_8_5"
-        
+        switch variabile
+            case "snow_depth"
+                modelsAvaible = dizionarioModelli.ssp5_8_5_snow_depth;
+            case "snowfall_flux"
+                modelsAvaible = dizionarioModelli.ssp5_8_5_snowfall_flux;
+            case "surface_snow_amount"
+                modelsAvaible = dizionarioModelli.ssp5_8_5_surface_snow_amount;
+        end
 end
 
 end

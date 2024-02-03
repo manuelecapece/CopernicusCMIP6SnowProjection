@@ -1,4 +1,4 @@
-function plotSnowDepth(snw,T)
+function plotSnowDepth(snw,T,time)
 % Crea grafico della Snow depth [m] media in Basilicata per mese.
 % Indica lo spessore della neve.
 

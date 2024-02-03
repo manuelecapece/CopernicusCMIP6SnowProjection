@@ -1,6 +1,6 @@
 function [pathDataset,F] = makeRequest(experiment,variable,model,year)
 %Effettua la richiesta API, restituisce la struttura contentente le opzioni 
-%della richiesta API e il nome del dataset
+%della richiesta API e il path del dataset netCDF
 
 cd('dataset\')
 
@@ -24,7 +24,6 @@ while (F.State ~= 'completed')
         stato = F.State;
     end
 end
-
 F.wait();
 
 if F.State == "completed"

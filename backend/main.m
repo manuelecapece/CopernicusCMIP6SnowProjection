@@ -7,37 +7,15 @@ close all;
 %prima esecuzione e poi l'app creerà il file .cdsapirc e lo inserira nel
 %path %HOMEPATH%
 
-%Migliora plot grafico, prova line plot con interpolazione spline di grado alto
-% aggiungi {} agli esponenti
+%TODO Migliora plot grafico, prova line plot con interpolazione spline di grado alto
 
-% % Query di esempio 1
-% esperimento = 4;
-% startYear = 2015;
-% endYear = 2100;
-% variabile = 3;
-% modello = 3;
 
-% % Query di esempio 2
-% esperimento = 3;
-% startYear = 2015;
-% endYear = 2022;
-% variabile = 2;
-% modello = 1;
+%Carica parametri richiesta di prova
+[esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
 
-esperimento = 3;
-startYear = 2015;
-endYear = 2022;
-variabile = 3;
-modello = 3;
-
-%Seleziona esperimento e asse dei tempi
-[experiment,year] = selezionaParametri(esperimento,startYear,endYear);
-fprintf('Parametri selezionati:\n\tEsperimento: %s \n\tAnno inizio: %s \n\tAnno fine: %s\n', experiment, num2str(year(1)), num2str(year(end)));
-disp(newline)
-
-%Seleziona variabile
-[variable,models] = selezionaVariabile(experiment,variabile);
-fprintf('Variabile selezionata: \n\t%s\n', variable);
+%Seleziona parametri: esperimento,variabile e asse dei tempi
+[experiment, variable, year, models] = selezionaParametri(esperimento,variabile,startYear,endYear);
+fprintf('Parametri selezionati:\n\tEsperimento: %s \n\tVariabile: %s \n\tAnno inizio: %s \n\tAnno fine: %s\n', experiment, variable, num2str(year(1)), num2str(year(end)));
 disp(newline)
 
 disp('Lista dei modelli disponibili per i parametri selezionati:');
@@ -46,7 +24,7 @@ disp(newline)
 
 %Seleziona modello
 [model] = selezionaModello(models,modello);
-disp(['Modello selezionato: ',model])
+fprintf('Modello selezionato: \n\t%s\n', model);
 disp(newline)
 
 %Effettua la richiesta
@@ -76,5 +54,5 @@ T = convertiDate(time);
 
 %% Plotting dati
 
-plotDati(snow_basilicata,variable,T)
+plotDati(snow_basilicata,variable,T,time,year)
 
