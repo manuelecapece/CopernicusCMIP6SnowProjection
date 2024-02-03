@@ -9,7 +9,7 @@ query = 2;
 switch query
     case 1
         esperimento = 4;
-        variabile = 2;
+        variabile = 3;
         startYear = 2015;
         endYear = 2100;
         modello = 2;

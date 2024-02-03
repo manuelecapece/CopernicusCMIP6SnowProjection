@@ -7,6 +7,8 @@ close all;
 %prima esecuzione e poi l'app creerà il file .cdsapirc e lo inserira nel
 %path %HOMEPATH%
 
+%sistema stampa ora e data creazione log richiesta
+
 %TODO Migliora plot grafico, prova line plot con interpolazione spline di grado alto
 
 
