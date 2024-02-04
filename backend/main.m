@@ -1,5 +1,5 @@
 clc;
-clear all;
+clear variables;
 close all;
 %% Richiesta API modello projections-cmip6
 
