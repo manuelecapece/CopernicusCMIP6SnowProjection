@@ -13,6 +13,8 @@ close all;
 
 %TODO gestione esperimento ssp4_6_0 non contiene dati
 
+%TODO metti tutti i file in dataset in gitignore
+
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
 
