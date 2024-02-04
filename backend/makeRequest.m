@@ -16,7 +16,13 @@ datasetOptions.year = year;
 F = climateDataStoreDownloadAsync(datasetName,datasetOptions);
 
 disp(newline)
-fprintf('Data e ora di creazione: %s\n', datestr(F.CreateDateTime, 'yyyy-MM-dd hh:mm:ss'));
+dataCreazione = datetime(F.CreateDateTime,'Format','yyyy-MM-dd hh:mm:ss');
+fprintf('Data e ora di creazione: %s\n', dataCreazione);
+
+disp('.')
+disp('.')
+disp('.')
+
 stato = '';
 while (F.State ~= 'completed')
     if(stato ~= F.State)
@@ -30,9 +36,9 @@ if F.State == "completed"
     downloadedFilePaths = F.OutputArguments{1};
     citation = F.OutputArguments{2};
 end
-
-fprintf('Data e ora di fine: %s\n', datetime(F.FinishDateTime,'Format','yyyy-MM-dd hh:mm:ss'));
-fprintf('Tempo di esecuzione : %s\n', F.RunningDuration);
+dataFine = datetime(F.FinishDateTime,'Format','yyyy-MM-dd hh:mm:ss');
+fprintf('Data e ora di fine: %s\n', dataFine);
+fprintf('Tempo di esecuzione : %s\n',  dataFine - dataCreazione);
 
 cd('..\')
 

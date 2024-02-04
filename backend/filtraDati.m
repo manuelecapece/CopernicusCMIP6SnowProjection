@@ -24,7 +24,12 @@ zeroRows = all(snw_bas(:,:,1) == 0, 2);
 snw_bas(zeroRows, :,:) = [];
 zeroColumns = all(snw_bas(:,:,1) == 0, 1);
 snw_bas(:, zeroColumns,:) = [];
+
 disp(['Dimensioni matrice filtrata sn_bas : ' num2str(size(snw_bas))]);
+
+if(size(snw_bas,1) == 0 || size(snw_bas,2) == 0)
+    error('Il modello selezionato non contiene dati relativi alle coordinate geografiche della Basilicata');
+end
 
 end
 

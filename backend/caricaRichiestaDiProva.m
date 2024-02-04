@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 2;
+query = 1;
 
 switch query
     case 1
@@ -20,7 +20,7 @@ switch query
         endYear = 2022;
         modello = 1;
     case 3
-        %Genera eccezione
+        %Genera eccezione, modello = IPSL-CM6A-LR (France)
         esperimento = 8;
         variabile = 3;
         startYear = 2015;

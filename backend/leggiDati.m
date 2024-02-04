@@ -5,13 +5,14 @@ try
     ncid = netcdf.open(pathDataset);
     % disp(newline)
     % ncdisp(pathDataset)
-    time = netcdf.getVar(ncid,0);%time
-    time_bnds = netcdf.getVar(ncid,1);%time_bnds
-    lat = netcdf.getVar(ncid,2);%Latitude
-    lat_bnds = netcdf.getVar(ncid,3);%lat_bnds
-    lon = netcdf.getVar(ncid,4);%Longitude
-    lon_bnds = netcdf.getVar(ncid,5);%lon_bnds
-    snw = netcdf.getVar(ncid,6);%Surface Snow Amount
+    timeId = netcdf.inqVarID(ncid,'time');
+    latId = netcdf.inqVarID(ncid,'lat');
+    lonId = netcdf.inqVarID(ncid,'lon');
+    snwId = netcdf.inqVarID(ncid,'snw');
+    time = netcdf.getVar(ncid,timeId);
+    lat = netcdf.getVar(ncid,latId);
+    lon = netcdf.getVar(ncid,lonId);
+    snw = netcdf.getVar(ncid,snwId);
     netcdf.close(ncid);
 catch exception
     netcdf.close(ncid);
