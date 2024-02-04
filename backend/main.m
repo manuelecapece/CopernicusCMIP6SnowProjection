@@ -7,13 +7,8 @@ close all;
 %prima esecuzione e poi l'app creerà il file .cdsapirc e lo inserira nel
 %path %HOMEPATH%
 
-%TODO gestione modelli che non hanno dati in basilicata
+%Modelli con problemi di conversione delle date: Italia, Norvegia, Germany, UK
 
-%TODO gestione esperimento SSP5-3.4OS
-
-%TODO gestione esperimento ssp4_6_0 non contiene dati
-
-%TODO metti tutti i file in dataset in gitignore
 
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
@@ -34,13 +29,13 @@ disp(newline)
 
 %Effettua la richiesta
 disp('*********************************************************************************************')
-disp('*               Richiesta in corso, attendere la risposta del server...                     *')
+disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
 disp(newline)
 [pathDataset,F] = makeRequest(experiment,variable,model,year);
 disp(newline)
 fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
 disp(newline)
-disp('*                            Richiesta completata!                                          *')
+disp('*                               Richiesta completata!                                       *')
 disp('*********************************************************************************************')
 disp(newline)
 

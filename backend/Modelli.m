@@ -1,5 +1,11 @@
 classdef Modelli
     %Classe contenente tutti i modelli europei disponibili
+
+    %Modelli disabilitati per mancanza di dati in Basilicata
+    %   IPSL-CM6A-LR (France),IPSL-CM5A2-INCA (France) 
+    %   MPI-ESM1-2-LR (Germany) 
+    %   CMCC-ESM2 (Italy)
+    %   MPI-ESM-1-2-HAM (Switzerland)
     
     properties
         %Modelli Europei

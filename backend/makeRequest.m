@@ -52,9 +52,9 @@ fprintf('Tempo di esecuzione : %s\n',  dataFine - dataCreazione);
 
 cd('..\')
 
-pathDataset = strcat('Dataset/',downloadedFilePaths(1));
-pathJson = strcat('Dataset/',downloadedFilePaths(2));
-pathPNG = strcat('Dataset/',downloadedFilePaths(3));
+pathDataset = strcat('dataset/',downloadedFilePaths(1));
+pathJson = strcat('dataset/',downloadedFilePaths(2));
+pathPNG = strcat('dataset/',downloadedFilePaths(3));
 
 
 end

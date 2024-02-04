@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 1;
+query = 6;
 
 switch query
     case 1
@@ -20,33 +20,40 @@ switch query
         endYear = 2022;
         modello = 1;
     case 3
-        %Test modellli
         %Modello IPSL-CM6A-LR (France) non contiene dati
         %Modello MPI-ESM1-2-LR (Germany) non contiene dati
         %Modello NorESM2-MM (Norway) con esp = 8, var = 3 fallisce anche sul sito
         %Modello NorESM2-LM (Norway) con esp = 8, var = 3 fallisce anche sul sito
+        %Modello CMCC-ESM2 (Italy) con esp = 8, var = 1 scambia il mese di Aprile con Novembre ma converte correttamente gli altri
+        %Modello CMCC-ESM2 (Italy) con esp = 8, var = 3 non contiene dati
+        %Modello CMCC-CM2-SR5 (Italy) con esp = 8, var = 1 scambia il mese di Aprile con Novembre ma converte correttamente gli altri
         esperimento = 8;
         variabile = 1;
         startYear = 2015;
         endYear = 2022;
-        modello = 5;   
+        modello = 4;   
     case 4
-        %Test esperimenti
-        %Esperimento ssp4_6_0 con modello 1 e variabile 1 non contiene dati
-        %Esperimento ssp4_6_0 con modello 1 e 2 e variabile 2 fallisce 
-        %Esperimento ssp4_6_0 con modello 1 e variabile 3 non contiene dati
-        esperimento = 6;
-        variabile = 2; 
+        %Modello IPSL-CM5A2-INCA (France) non contiene dati
+        %Modello AWI-CM-1-1-MR (Germany) scambia il mese di Aprile con Novembre ma converte correttamente gli altri
+        esperimento = 2;
+        variabile = 1;
         startYear = 2015;
-        endYear = 2050;
-        modello = 2;   
-    case 5
-        %Esperimento SSP5-3.4OS dispone di anni solo da 2040 al 2100
-        esperimento = 7;
+        endYear = 2022;
+        modello = 13; 
+     case 5
+        %Modello HadGEM3-GC31-LL (UK) non convertre correttamente le date
+        %Modello MPI-ESM-1-2-HAM (Switzerland) non contiene dati
+        esperimento = 4;
         variabile = 3;
         startYear = 2015;
-        endYear = 2050;
-        modello = 1;   
+        endYear = 2022;
+        modello = 7; 
+      case 6
+        esperimento = 6;
+        variabile = 2;
+        startYear = 2015;
+        endYear = 2022;
+        modello = 2;  
 end
 
 end
