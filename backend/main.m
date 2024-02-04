@@ -9,6 +9,10 @@ close all;
 
 %TODO gestione modelli che non hanno dati in basilicata
 
+%TODO gestione esperimento SSP5-3.4OS
+
+%TODO gestione esperimento ssp4_6_0 non contiene dati
+
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
 
@@ -45,13 +49,10 @@ disp(newline)
 dim = size(snw);
 fprintf('Dimensioni matrice snw: \nLatitudini: %s, Longitudini: %s, Time: %s\n', num2str(dim(1)), num2str(dim(2)), num2str(dim(3)));
 
-%Conversione delle date
-T = convertiDate(time);
-
 %Filtraggio dei dati sulle coordinate geografiche della Basilicata
 [snow_basilicata] = filtraDati(lat,lon,snw);
 
 %% Plotting dati
 
-plotDati(snow_basilicata,variable,T,time,year)
+plotDati(snow_basilicata,variable,time,year)
 

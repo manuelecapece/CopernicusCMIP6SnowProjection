@@ -7,7 +7,7 @@ experiments = ["ssp1_1_9", "ssp1_2_6", "ssp2_4_5", "ssp3_7_0", "ssp4_3_4", "ssp4
 if(sceltaEsperimento < 1 || sceltaEsperimento > 8)
     error("Scelta esperimento non valida");
 end
-if(startYear < 2015 || startYear > 20100)
+if(startYear < 2015 || startYear > 2100)
     error("Anno di inizio non valido");
 end
 if(endYear < 2015 || endYear > 2100)

@@ -1,5 +1,8 @@
-function plotDati(snow,variable,T,time,year_string)
+function plotDati(snow,variable,time,year_string)
 %Plotta il grafico della variabile selezionata
+
+%Conversione delle date
+T = convertiDate(time);
 
 switch variable
     case "snow_depth"
@@ -37,11 +40,18 @@ end
 figure();
 
 %Area plot media annua scala logaritmica interpolato
+
 mediaAnnua = mean(snow_mean_reshaped,2);
 uniqueYears = unique(year(T));
 years_date = datetime(uniqueYears, 1, 1);
 T_interpolato = linspace(min(years_date), max(years_date), size(years_date,1)*8);
-snow_interp_T = interp1(years_date', mediaAnnua, T_interpolato, 'pchip');
+years_date = years_date';
+
+fprintf('T_interpolato  : %d x %d\n', size(T_interpolato));
+fprintf('years_date     : %d x %d\n', size(years_date));
+fprintf('mediaAnnua     : %d x %d\n', size(mediaAnnua));
+
+snow_interp_T = interp1(years_date, mediaAnnua, T_interpolato, 'pchip');
 
 a = area(T_interpolato,snow_interp_T,'FaceAlpha', 0.2);
 a.FaceColor = rgb('SkyBlue');
@@ -65,6 +75,7 @@ legend('Media annua','Gennaio', 'Febbraio','Marzo','Aprile','Dicembre','FontSize
 ax = gca;
 ax.XTick = years_date;
 ax.XTickLabel = datestr(years_date, 'yyyy');
+disableDefaultInteractivity(gca)
 
 hold off
 
