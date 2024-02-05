@@ -13,19 +13,14 @@ close all;
 
 %Modelli con problemi di conversione delle date: Italia, Norvegia, Germany, UK
 
-%Problemi Norvegia
-%     modello NorESM2-LM (Norway) non contiene dati
-%     modello NorESM2-MM (Norway) con variabile surface_snow_amount contiene solo 0 per la basilicata
-% Elimina NorESM2-LM (Norway)
-% Disabilita surface_snow_amount per Norvegia
-
+%Norvegia manca Gennaio 2015 -> se selezioni Norvegia resituisco come startYear sempre 2016
 
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
 
 %Seleziona parametri: esperimento,variabile e asse dei tempi
-[experiment, variable, years_string, models] = selezionaParametri(esperimento,variabile,startYear,endYear);
-fprintf('Parametri selezionati:\n\tEsperimento: %s \n\tVariabile: %s \n\tAnno inizio: %s \n\tAnno fine: %s\n', experiment, variable, num2str(years_string(1)), num2str(years_string(end)));
+[experiment, variable, years, models] = selezionaParametri(esperimento,variabile,startYear,endYear);
+fprintf('Parametri selezionati:\n\tEsperimento: %s \n\tVariabile: %s \n\tAnno inizio: %s \n\tAnno fine: %s\n', experiment, variable, num2str(years(1)), num2str(years(end)));
 disp(newline)
 
 disp('Lista dei modelli disponibili per i parametri selezionati:');
@@ -41,7 +36,7 @@ disp(newline)
 disp('*********************************************************************************************')
 disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
 disp(newline)
-[pathDataset,F] = makeRequest(experiment,variable,model,years_string);
+[pathDataset,F] = makeRequest(experiment,variable,model,years);
 disp(newline)
 fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
 disp(newline)
@@ -65,5 +60,5 @@ fprintf('Dimensioni matrice snw: \nLatitudini: %s, Longitudini: %s, Time: %s\n',
 
 %% Plotting dati
 
-plotDati(snow_basilicata,variable,time,years_string)
+plotDati(snow_basilicata,variable,time,years)
 

@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 6;
+query = 7;
 
 switch query
     case 1
@@ -46,7 +46,14 @@ switch query
         endYear = 2022;
         modello = 7; 
       case 6
-        %Test modello NorESM2-MM (Norway) contiene solo 0 con variabile surface_snow_amount
+        %Test modello NorESM2-LM (Norway) non contiene dati
+        esperimento = 2;
+        variabile = 1;
+        startYear = 2015;
+        endYear = 2022;
+        modello = 3;  
+      case 7
+        %Test modello NorESM2-MM (Norway) contiene solo 0
         esperimento = 4;
         variabile = 3;
         startYear = 2024;

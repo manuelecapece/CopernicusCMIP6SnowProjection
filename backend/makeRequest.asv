@@ -7,10 +7,10 @@ m = Modelli;
 
 if(strcmp(model,'noresm2_mm') || strcmp(model,'noresm2_lm'))
     if(year(1) == '2015')
-        year = creaStringaAnni(2016 , str2num(year(end)));
+        year = creaStringaAnni();
     end
     if(year(end) == '2015')
-        year = creaStringaAnni(2016 , 2016);
+        year(end) == '2016';
     end
 end
 
