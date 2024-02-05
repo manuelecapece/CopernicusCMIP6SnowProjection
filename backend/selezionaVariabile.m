@@ -17,33 +17,33 @@ dizionarioModelli.ssp1_1_9_snowfall_flux       = [m.europa2, m.europa3, m.europa
 dizionarioModelli.ssp1_1_9_surface_snow_amount = [m.europa2, m.europa3, m.europa5];
 dizionarioModelli.ssp1_1_9_snow_depth          = [m.europa2, m.europa3, m.europa5];
 %SSP1-2.6
-dizionarioModelli.ssp1_2_6_snowfall_flux       = [m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.norvegia2, m.inghilterra1, m.inghilterra2];
-dizionarioModelli.ssp1_2_6_surface_snow_amount = [m.europa5, m.norvegia1, m.norvegia2];
-dizionarioModelli.ssp1_2_6_snow_depth          = [m.europa5, m.italia2, m.norvegia1, m.norvegia2];
+dizionarioModelli.ssp1_2_6_snowfall_flux       = [m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.inghilterra1, m.inghilterra2];
+dizionarioModelli.ssp1_2_6_surface_snow_amount = [m.europa5];
+dizionarioModelli.ssp1_2_6_snow_depth          = [m.europa5, m.italia2, m.norvegia1];
 %SSP2-4.5
-dizionarioModelli.ssp2_4_5_snowfall_flux       = [m.europa4, m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.norvegia2, m.inghilterra1];
-dizionarioModelli.ssp2_4_5_surface_snow_amount = [m.europa4, m.europa5, m.norvegia1, m.norvegia2];
-dizionarioModelli.ssp2_4_5_snow_depth          = [m.europa4, m.europa5, m.italia2, m.norvegia1, m.norvegia2];
+dizionarioModelli.ssp2_4_5_snowfall_flux       = [m.europa4, m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.inghilterra1];
+dizionarioModelli.ssp2_4_5_surface_snow_amount = [m.europa4, m.europa5];
+dizionarioModelli.ssp2_4_5_snow_depth          = [m.europa4, m.europa5, m.italia2, m.norvegia1];
 %SSP3-7.0
-dizionarioModelli.ssp3_7_0_snowfall_flux       = [m.europa1, m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.norvegia2];
-dizionarioModelli.ssp3_7_0_surface_snow_amount = [m.europa1, m.europa5, m.norvegia1, m.norvegia2];
-dizionarioModelli.ssp3_7_0_snow_depth          = [m.europa1, m.europa5, m.italia2, m.norvegia1, m.norvegia2];
+dizionarioModelli.ssp3_7_0_snowfall_flux       = [m.europa1, m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1];
+dizionarioModelli.ssp3_7_0_surface_snow_amount = [m.europa1, m.europa5];
+dizionarioModelli.ssp3_7_0_snow_depth          = [m.europa1, m.europa5, m.italia2, m.norvegia1];
 %SSP4-3.4
 dizionarioModelli.ssp4_3_4_snowfall_flux       = [m.europa3, m.francia4];
 dizionarioModelli.ssp4_3_4_surface_snow_amount = [m.europa3];
-%dizionarioModelli.ssp4_3_4_snow_depth          = [ ]; VUOTO, DISABILITATO
+dizionarioModelli.ssp4_3_4_snow_depth          = []; %disabilitato, nessun modello valido per la Basilicata
 %SSP4-6.0
 dizionarioModelli.ssp4_6_0_snowfall_flux       = [m.francia4];
-%dizionarioModelli.ssp4_6_0_surface_snow_amount = [ ]; VUOTO, DISABILITATO
-%dizionarioModelli.ssp4_6_0_snow_depth          = [ ]; VUOTO, DISABILITATO
+dizionarioModelli.ssp4_6_0_surface_snow_amount = []; %disabilitato, nessun modello valido per la Basilicata
+dizionarioModelli.ssp4_6_0_snow_depth          = []; %disabilitato, nessun modello valido per la Basilicata
 %SSP5-3.4OS
 dizionarioModelli.ssp5_3_4os_snowfall_flux       = [m.europa3,m.francia4];
 dizionarioModelli.ssp5_3_4os_surface_snow_amount = [m.europa3];
-%dizionarioModelli.ssp5_3_4os_snow_depth          = [ ]; VUOTO, DISABILITATO
+dizionarioModelli.ssp5_3_4os_snow_depth          = []; %disabilitato, nessun modello valido per la Basilicata
 %SSP5-8.5
-dizionarioModelli.ssp5_8_5_snowfall_flux       = [m.europa4, m.europa5, m.francia1,  m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.norvegia2, m.inghilterra1, m.inghilterra2];
-dizionarioModelli.ssp5_8_5_surface_snow_amount = [m.europa4, m.europa5, m.norvegia1, m.norvegia2];
-dizionarioModelli.ssp5_8_5_snow_depth          = [m.europa4, m.europa5, m.italia2, m.norvegia1, m.norvegia2];
+dizionarioModelli.ssp5_8_5_snowfall_flux       = [m.europa4, m.europa5, m.francia1, m.francia3, m.francia4, m.italia2, m.germania1, m.norvegia1, m.inghilterra1, m.inghilterra2];
+dizionarioModelli.ssp5_8_5_surface_snow_amount = [m.europa4, m.europa5];
+dizionarioModelli.ssp5_8_5_snow_depth          = [m.europa4, m.europa5, m.italia2, m.norvegia1];
 
 switch experiment
     case "ssp1_1_9"
@@ -67,7 +67,7 @@ switch experiment
     case "ssp4_3_4"
         switch variabile
             case "snow_depth"
-                modelsAvaible = dizionarioModelli.ssp4_3_4_snow_depth;
+                modelsAvaible = [];%disabilitato, nessun modello valido per la Basilicata
             case "snowfall_flux"
                 modelsAvaible = dizionarioModelli.ssp4_3_4_snowfall_flux;
             case "surface_snow_amount"
@@ -76,7 +76,7 @@ switch experiment
     case "ssp5_3_4os"
         switch variabile
             case "snow_depth"
-                modelsAvaible = dizionarioModelli.ssp5_3_4os_snow_depth;
+                modelsAvaible = [];%disabilitato, nessun modello valido per la Basilicata
             case "snowfall_flux"
                 modelsAvaible = dizionarioModelli.ssp5_3_4os_snowfall_flux;
             case "surface_snow_amount"
@@ -94,11 +94,11 @@ switch experiment
     case "ssp4_6_0"
         switch variabile
             case "snow_depth"
-                modelsAvaible = dizionarioModelli.ssp4_6_0_snow_depth;
+                modelsAvaible = [];%disabilitato, nessun modello valido per la Basilicata
             case "snowfall_flux"
                 modelsAvaible = dizionarioModelli.ssp4_6_0_snowfall_flux;
             case "surface_snow_amount"
-                modelsAvaible = dizionarioModelli.ssp4_6_0_surface_snow_amount;
+                modelsAvaible = [];%disabilitato, nessun modello valido per la Basilicata
         end
     case "ssp3_7_0"
         switch variabile

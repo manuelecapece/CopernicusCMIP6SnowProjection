@@ -14,8 +14,6 @@ if(strcmp(model,'noresm2_mm') || strcmp(model,'noresm2_lm'))
     end
 end
 
-year
-
 cd('dataset\')
 
 datasetName = "projections-cmip6";

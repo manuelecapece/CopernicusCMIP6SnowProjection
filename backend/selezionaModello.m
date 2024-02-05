@@ -6,6 +6,9 @@ if(sceltaModello < 1 || sceltaModello > size(modelsAvaible,2))
 end
 
 model = modelsAvaible(sceltaModello);
+if(isempty(model))
+    error('Non ci sono modelli disponibili per la selezione effettuata')
+end
 
 m = Modelli;
 

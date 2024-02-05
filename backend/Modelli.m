@@ -5,6 +5,7 @@ classdef Modelli
     %   IPSL-CM6A-LR (France),IPSL-CM5A2-INCA (France) 
     %   MPI-ESM1-2-LR (Germany) 
     %   CMCC-ESM2 (Italy)
+    %   NorESM2-LM (Norway)
     %   MPI-ESM-1-2-HAM (Switzerland)
     
     properties

@@ -3,22 +3,9 @@ clear variables;
 close all;
 %% Richiesta API modello projections-cmip6
 
-%TODO passaggio KEY user -> non possibile, meglio inserire la chiave alla
-%prima esecuzione e poi l'app creerà il file .cdsapirc e lo inserira nel
-%path %HOMEPATH%
+%Bisogna selezionare almeno 2 anni altrimenti il grafico crea problemi es 2015-2016
 
 %Gestisci questione snw diversa a seconda variabile
-
-%Gestisci flusso di esecuzione con modelli disabilitati
-
-%Modelli con problemi di conversione delle date: Italia, Norvegia, Germany, UK
-
-%Problemi Norvegia
-%     modello NorESM2-LM (Norway) non contiene dati
-%     modello NorESM2-MM (Norway) con variabile surface_snow_amount contiene solo 0 per la basilicata
-% Elimina NorESM2-LM (Norway)
-% Disabilita surface_snow_amount per Norvegia
-
 
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
