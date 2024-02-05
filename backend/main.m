@@ -3,9 +3,9 @@ clear variables;
 close all;
 %% Richiesta API modello projections-cmip6
 
-%Bisogna selezionare almeno 2 anni altrimenti il grafico crea problemi es 2015-2016
+%Cerca metodo per bloccare la richiesta
 
-%Gestisci questione snw diversa a seconda variabile
+%Fai versione grafico con sublpot grafico ad area e grafico a barre
 
 %Carica parametri richiesta di prova
 [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiProva();
@@ -14,6 +14,11 @@ close all;
 [experiment, variable, years_string, models] = selezionaParametri(esperimento,variabile,startYear,endYear);
 fprintf('Parametri selezionati:\n\tEsperimento: %s \n\tVariabile: %s \n\tAnno inizio: %s \n\tAnno fine: %s\n', experiment, variable, num2str(years_string(1)), num2str(years_string(end)));
 disp(newline)
+
+if(isempty(models))
+    disp('Non ci sono modelli disponibili per i parametri selezionati');
+    return;
+end
 
 disp('Lista dei modelli disponibili per i parametri selezionati:');
 fprintf('\t%s\n', models{:});

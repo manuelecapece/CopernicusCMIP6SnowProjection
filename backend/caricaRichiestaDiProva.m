@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 9;
+query = 8;
 
 switch query
     case 1
@@ -12,11 +12,11 @@ switch query
         %Anomalie:
         %Richieste da segnalare:
         %   ssp1_1_9,snowfall_flux,2025,2060,ec_earth3_veg ci mette 30 anni
-        esperimento = 3;
-        variabile = 1;
+        esperimento = 1;
+        variabile = 2;
         startYear = 2025;
         endYear = 2060;
-        modello = 1;
+        modello = 1; 
     case 2
         %Modelli Francesi - OK 
         %Anomalie: non ci sono modelli Francesi per la
@@ -81,6 +81,20 @@ switch query
         startYear = 2024;
         endYear = 2056;
         modello = 8;
+    case 10
+        %Scenario migliore per la sostenibilità - SSP1-2.6
+        esperimento = 2;
+        variabile = 2;
+        startYear = 2015;
+        endYear = 2100;
+        modello = 1; %EC-Earth3-Veg-LR (Europe)
+     case 11
+        %Scenario peggiore per la sostenibilità - SSP1-2.6
+        esperimento = 8;
+        variabile = 2;
+        startYear = 2015;
+        endYear = 2100;
+        modello = 2; %EC-Earth3-Veg-LR (Europe)
 end
 
 end
