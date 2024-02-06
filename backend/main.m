@@ -59,3 +59,7 @@ fprintf('Dimensioni matrice snw: \nLatitudini: %s, Longitudini: %s, Time: %s\n',
 
 plotDati(snow_basilicata,variable,time,years_string)
 
+%% Pulizia cartella contente i dataSet scaricati con le query
+
+eliminaDataset()
+

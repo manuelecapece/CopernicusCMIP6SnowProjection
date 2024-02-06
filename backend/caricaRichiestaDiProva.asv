@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 10;
+query = 8;
 
 switch query
     case 1
@@ -82,44 +82,16 @@ switch query
         endYear = 2056;
         modello = 8;
     case 10
-        %% Analisi scenari SSP
-        
+        %Analisi scenari SSP
+
+        %ssp1_1_9 - scenario più ottimistico possibile
         variabile = 2;
-        startYear = 2025;
+        startYear = 2024;
         endYear = 2100;
-
-        % %ssp1_1_9 - scenario più ottimistico possibile
-        % esperimento = 1;
-        % modello = 3;  %EC-Earth3-Veg-LR (Europe)
     
-        % %ssp1_2_6
-        % esperimento = 2;
-        % modello = 1; %EC-Earth3-Veg-LR (Europe)
-        
-        % %ssp2_4_5
-        % esperimento = 3;
-        % modello = 2; %EC-Earth3-Veg-LR (Europe)
-        
-        % %ssp3_7_0 - scenario più pessimistico possibile
-        % esperimento = 4;
-        % modello = 2; %EC-Earth3-Veg-LR (Europe)
-        
-        % %ssp4_3_4 
-        % esperimento = 5;
-        % modello = 1; %EC-Earth3 (Europe)
-        
-        % %ssp4_6_0 
-        % esperimento = 6;
-        % modello = 1; %CNRM-ESM2-1 (France)
-         
-        % %ssp5_3_4os
-        % esperimento = 7;
-        % modello = 2; %CNRM-ESM2-1 (France) , provare con EC-Earth3 (Europe) che fallisce
-         
-        %ssp5_8_5
-        esperimento = 8;
-        modello = 2; %EC-Earth3-Veg-LR (Europe)
-
+        %ssp1_1_9
+        esperimento = 1;
+        modello = ; 
 end
 
 end

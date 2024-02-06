@@ -21,6 +21,11 @@ if(startYear > endYear)
 end
 
 experiment = experiments(sceltaEsperimento);
+
+if(strcmp(experiment,'ssp5_3_4os') && startYear < 2040)
+    startYear = 2040;
+end
+
 year = creaStringaAnni(startYear,endYear);
 
 %Seleziona variabile
