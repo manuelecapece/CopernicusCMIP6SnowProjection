@@ -33,7 +33,8 @@ disp(newline)
 disp('*********************************************************************************************')
 disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
 disp(newline)
-[pathDataset,F] = makeRequest(experiment,variable,model,years_string);
+global response;
+[pathDataset] = makeRequest(experiment,variable,model,years_string, false);
 disp(newline)
 fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
 disp(newline)

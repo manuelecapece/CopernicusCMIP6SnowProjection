@@ -1,8 +1,8 @@
-function [pathDataset,F] = makeRequest(experiment,variable,model,year)
-%Effettua la richiesta API, restituisce la struttura contentente le opzioni 
+function [pathDataset] = makeRequest(experiment,variable,model,year, isInApp, path1)
+%Effettua la richiesta API, restituisce la struttura contentente le opzioni
 %della richiesta API e il path del dataset netCDF
 
-% Setto start year a 2016 se l'utente sceglie di partire dal 2015 con un modello Norvegese 
+% Setto start year a 2016 se l'utente sceglie di partire dal 2015 con un modello Norvegese
 m = Modelli;
 
 if(strcmp(model,'noresm2_mm') || strcmp(model,'noresm2_lm'))
@@ -14,59 +14,68 @@ if(strcmp(model,'noresm2_mm') || strcmp(model,'noresm2_lm'))
     end
 end
 
-cd('dataset\')
+if (~isInApp)
+    cd('dataset\');
+else
+    cd(path1);
+end
 
 datasetName = "projections-cmip6";
 datasetOptions.temporal_resolution = "monthly";
-datasetOptions.month  = ["01", "02", "03","04","12"]; %Da Dicembre a Aprile
+datasetOptions.month  = ["01", "02", "03", "04", "12"]; %Da Dicembre a Aprile
 
 datasetOptions.experiment  = experiment;
 datasetOptions.variable  = variable;
 datasetOptions.model  = model;
-datasetOptions.year = year; 
+datasetOptions.year = year;
 
-F = climateDataStoreDownloadAsync(datasetName,datasetOptions);
+global response;
+response = climateDataStoreDownloadAsync(datasetName,datasetOptions);
 
-disp(newline)
-dataCreazione = datetime(F.CreateDateTime,'Format','yyyy-MM-dd hh:mm:ss');
-fprintf('Data e ora di creazione: %s\n', dataCreazione);
+if (~isInApp)
+    disp(newline)
+    dataCreazione = datetime(response.CreateDateTime,'Format','yyyy-MM-dd hh:mm:ss');
+    fprintf('Data e ora di creazione: %s\n', dataCreazione);
 
-disp('.')
-disp('.')
-disp('.')
+    disp('.')
+    disp('.')
+    disp('.')
 
-stato = '';
-while (F.State ~= 'completed')
-    if(stato ~= F.State)
-        disp(['Stato richiesta: ', num2str(F.State)]);
-        stato = F.State;
+    stato = '';
+    while (response.State ~= 'completed')
+        if(stato ~= response.State)
+            disp(['Stato richiesta: ', num2str(response.State)]);
+            stato = response.State;
+        end
+        if(response.State == 'failed')
+            break
+        end
     end
-    if(F.State == 'failed')
-        break
-    end
-end
 
-F.wait();
+    response.wait();
 
-if(F.State == 'failed')
+    if(response.State == 'failed')
         cd('..\')
         error('Richiesta fallita');
+    end
+
+    if response.State == "completed"
+        downloadedFilePaths = response.OutputArguments{1};
+        %citation = response.OutputArguments{2};
+    end
+
+    dataFine = datetime(response.FinishDateTime,'Format','yyyy-MM-dd hh:mm:ss');
+    fprintf('Data e ora di fine: %s\n', dataFine);
+    fprintf('Tempo di esecuzione : %s\n',  dataFine - dataCreazione);
+
+    cd('..\')
+
+    pathDataset = strcat('dataset/',downloadedFilePaths(1));
+    %pathJson = strcat('dataset/',downloadedFilePaths(2));
+    %pathPNG = strcat('dataset/',downloadedFilePaths(3));
+else
+    cd('..\');
+    pathDataset=[];
 end
-
-if F.State == "completed"
-    downloadedFilePaths = F.OutputArguments{1};
-    citation = F.OutputArguments{2};
-end
-
-dataFine = datetime(F.FinishDateTime,'Format','yyyy-MM-dd hh:mm:ss');
-fprintf('Data e ora di fine: %s\n', dataFine);
-fprintf('Tempo di esecuzione : %s\n',  dataFine - dataCreazione);
-
-cd('..\')
-
-pathDataset = strcat('dataset/',downloadedFilePaths(1));
-pathJson = strcat('dataset/',downloadedFilePaths(2));
-pathPNG = strcat('dataset/',downloadedFilePaths(3));
-
 
 end
