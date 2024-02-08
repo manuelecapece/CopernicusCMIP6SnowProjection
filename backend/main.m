@@ -1,6 +1,7 @@
 clc;
 clear variables;
 close all;
+test=false;
 %% Richiesta API modello projections-cmip6
 
 %Cerca metodo per bloccare la richiesta
@@ -29,24 +30,28 @@ disp(newline)
 fprintf('Modello selezionato: \n\t%s\n', model);
 disp(newline)
 
-%Effettua la richiesta
-disp('*********************************************************************************************')
-disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
-disp(newline)
-global response;
-[pathDataset] = makeRequest(experiment,variable,model,years_string, false);
-disp(newline)
-fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
-disp(newline)
-disp('*                               Richiesta completata!                                       *')
-disp('*********************************************************************************************')
-disp(newline)
+if(~test)
+    %Effettua la richiesta
+    disp('*********************************************************************************************')
+    disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
+    disp(newline)
+    global response;
+    [pathDataset] = makeRequest(experiment,variable,model,years_string, false);
+    disp(newline)
+    fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
+    disp(newline)
+    disp('*                               Richiesta completata!                                       *')
+    disp('*********************************************************************************************')
+    disp(newline)
+else
+    pathDataset='dataset/projections-cmip6-20240208050333\snw_LImon_EC-Earth3-Veg-LR_ssp370_r1i1p1f1_gr_20150116-21001216_v20201123.nc';
+end
 
 %% Elaborazione dei dati
 
 %Lettura dati
 disp('*****************************************************')
-disp('*                  Import dei dati                  *')
+disp('*                Import dei dati                    *')
 [time,lat,lon,snw] = leggiDati(pathDataset);
 disp('*****************************************************')
 disp(newline)
@@ -58,9 +63,9 @@ fprintf('Dimensioni matrice snw: \nLatitudini: %s, Longitudini: %s, Time: %s\n',
 
 %% Plotting dati
 
-plotDati(snow_basilicata,variable,time,years_string)
+plotDati(snow_basilicata,variable,time,years_string, false);
 
 %% Pulizia cartella contente i dataSet scaricati con le query
 
-eliminaDataset()
+%eliminaDataset()
 
