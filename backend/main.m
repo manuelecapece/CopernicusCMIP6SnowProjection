@@ -4,8 +4,6 @@ clc;
 test=false;
 %% Richiesta API modello projections-cmip6
 
-%Cerca metodo per bloccare la richiesta
-
 %Fai versione grafico con sublpot grafico ad area e grafico a barre
 
 %Carica parametri richiesta di prova
@@ -35,7 +33,6 @@ if(~test)
     disp('*********************************************************************************************')
     disp('*                  Richiesta in corso, attendere la risposta del server...                  *')
     disp(newline)
-    global response;
     [pathDataset] = makeRequest(experiment,variable,model,years_string, false);
     disp(newline)
     fprintf('Percorso dataset netCDF scaricato: \n\t%s\n', pathDataset);
