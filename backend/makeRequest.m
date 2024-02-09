@@ -29,11 +29,11 @@ datasetOptions.variable  = variable;
 datasetOptions.model  = model;
 datasetOptions.year = year;
 
+clear global response;
 global response;
 response = climateDataStoreDownloadAsync(datasetName,datasetOptions);
 
 if (~isInApp)
-    disp(newline)
     dataCreazione = datetime(response.CreateDateTime,'Format','yyyy-MM-dd hh:mm:ss');
     fprintf('Data e ora di creazione: %s\n', dataCreazione);
 
