@@ -27,6 +27,7 @@ try
     %     end
     % end
 
+    disp(newline);
     for i = 1 : n
         varName = variableNames{i};
         if(strcmp(varName , 'snw') || strcmp(varName , 'snd')  || strcmp(varName , 'prsn'))
