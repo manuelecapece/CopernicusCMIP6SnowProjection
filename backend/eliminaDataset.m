@@ -1,7 +1,11 @@
-function eliminaDataset()
+function eliminaDataset(isInApp, path1, path2)
 %ripulisce la cartella dataset dai dataset scaricati con le richieste
 
-cd('dataset\')
+if (~isInApp)
+    cd('dataset\');
+else
+    cd(path1);
+end
 
 currentDirectory = pwd;
 
@@ -15,7 +19,10 @@ for i = 1:numel(subfolders)
     end
 end
 
-cd('..\')
-
+if (~isInApp)
+    cd('..\');
+else
+    cd(path2);
 end
 
+end

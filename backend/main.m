@@ -1,6 +1,6 @@
-clc;
 clear variables;
 close all;
+clc;
 test=false;
 %% Richiesta API modello projections-cmip6
 
@@ -67,5 +67,5 @@ plotDati(snow_basilicata,variable,time,years_string, false);
 
 %% Pulizia cartella contente i dataSet scaricati con le query
 
-%eliminaDataset()
+eliminaDataset(false);
 
