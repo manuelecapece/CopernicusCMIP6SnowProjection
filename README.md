@@ -1,38 +1,22 @@
-# RoadMap Progetto MTOT - ITA
+# Progetto MTOT
 
-Progetto Esame metodi e tecniche per l'osservazione della terrra anno 2023/24 - Università degli studi della Basilicata
+Repository del progetto di Metodi e Tecniche per l'osservazione della terra, edizione 2023-2024, gruppo 2, Università degli Studi della Basilicata, laurea magistrale in Ingegneria informatica e delle tecnologie dell'informazione.
 
-Questo repository contiene il progetto svolto per l'esame del corso di metodi e tecniche per l'osservazione della terrra presso l'Università degli studi della Basilicata tenuto dal prof C. Serio.
-Il progetto è composto di due parti.
+## Installazione
 
-## Parte Compilativa
+Per poter utilizzare l'applicativo è necessario che siano rispettati TUTTI i seguenti punti:
 
-Per la parte "compilativa" del progetto si predisporrà un approfondimento sul programma Copernicus.
-Il programma Copernicus va approfondito in tutti gli ambiti, specialmente in quello tecnologico relativo ai 6 satelliti che lo compongono.
+- Sulla macchina vi deve essere installata una versione di MATLAB pari o superiore alla R2020a
+- In MATLAB vi deve essere installato il [Climate Data Store Toolbox for MATLAB](https://it.mathworks.com/matlabcentral/fileexchange/104550-climate-data-store-toolbox-for-matlab) utilizzando l'Add-on Explorer di MATLAB o scaricandolo dalla pagina [GitHub](https://github.com/mathworks/climatedatastore)
+- Sulla macchina vi deve essere installato [Python](https://www.python.org/downloads/) in una [versione compatibile con la propria versione di MATLAB](https://it.mathworks.com/support/requirements/python-compatibility.html) e deve essere visibile a MATLAB. È possibile controllare quest'ultimo punto tramite il comando ```pyenv```.
+- Sulla macchina vi deve essere installata tramite ```pip``` [l'API CDS per Python](https://github.com/ecmwf/cdsapi)
 
-Al seguito una serie di risorse di approfondimento:
+Una volta terminata la fase di configurazione iniziale è possibile aprire il file ```CMIP6 Climate Projections Visualizer.mlappinstall``` presente nella cartella ```/dist``` e esso si installerà come un Add-on di MATLAB ovvero una MATLAB App. Una volta terminata la breve installazione l'applicativo si troverà in MATLAB nella sezione ```APPS->MY APPS```.
 
- - [ ] [Pagina wikipedia del programma](https://en.wikipedia.org/wiki/Copernicus_Programme)
- - [ ] [Video introduttivo](https://www.youtube.com/watch?v=KjgevEUge9U)
- - [ ] [Video possibili utilizzi](https://www.youtube.com/watch?v=JI6odNTv3Dc)
- - [ ] [Video panoramica sui serivizi offerti](https://www.youtube.com/watch?v=2U58uPfD4RM)
+## Uso
 
-Tutti questi contenuti dovrebbero essere letti/visti e sintetizzati in maniera uniforme e ordinata in una relazione; e successivamente ulteriormente sintetizzati in una presentazione.
+Il toolbox sulla cui base è stato costruito l'applicativo richiederà per la prima volta le credenziali CSAPI. È possibile visitare [How to use the CDS API](https://cds.climate.copernicus.eu/api-how-to) per ulteriori informazioni.
 
+## Licenza
 
-## Parte Sperimentale 
-
-Per la parte "sperimentale" del progetto si predisporrà una applicazione Matlab installabile sotto forma di toolbox che permetterà di visualizzare e analizzare i dati relativi alle precipitazioni nevose nella regione della Basilicata.
-
-Al seguito una serie di risorse di approfondimento:
-
- - [ ] [Pagina Copernicus Precipitazioni nevose](https://cds.climate.copernicus.eu/cdsapp#!/dataset/app-c3s-snow-precip-ratio?tab=overview)
- - [ ] [Tool di download dei dataset](https://cds.climate.copernicus.eu/cdsapp#!/dataset/projections-cmip6?tab=form)
- - [ ] [Approfondimento sulle proiezioni climatiche](https://confluence.ecmwf.int/display/CKB/CMIP6%3A+Global+climate+projections)
- - [ ] [Introduzione al progetto CMIP6](https://pcmdi.llnl.gov/CMIP6/)
- - [ ] [Paper sui modelli di previsione climatica](https://gmd.copernicus.org/articles/9/3461/2016/gmd-9-3461-2016.pdf)
- - [ ] [Climate Data Store Toolbox for MATLAB](https://it.mathworks.com/matlabcentral/fileexchange/104550-climate-data-store-toolbox-for-matlab)
-
-L'applicazione dovrebbe permettere al'utente di personalizzare l'esperimento, il modello e gli anni da tenere in conto, e in base a questi parametri di input dovrebbe mostrare in un grafico le precipitazioni nevose nell'area della Basilicata nei mesi invernali in quell'intervallo temporale.
-
-# RoadMap Progetto MTOT - ENG
+[MIT](https://choosealicense.com/licenses/mit/)
