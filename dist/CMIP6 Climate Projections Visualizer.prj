@@ -1,0 +1,102 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="2115402049" file="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist\CMIP6 Climate Projections Visualizer.prj" location="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist" name="CMIP6 Climate Projections Visualizer" target="target.mlapps" target-name="Package App">
+    <param.appname>CMIP6 Climate Projections Visualizer</param.appname>
+    <param.authnamewatermark>Michael Pio Stolfi &amp; Manuele Capece</param.authnamewatermark>
+    <param.email>michaelpio.stolfi@studenti.unibas.it, manuele.capece@studenti.unibas.it</param.email>
+    <param.company />
+    <param.icon>${PROJECT_ROOT}\CMIP6 Climate Projections Visualizer_resources\icon_24.png</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\CMIP6 Climate Projections Visualizer_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\CMIP6 Climate Projections Visualizer_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\CMIP6 Climate Projections Visualizer_resources\icon_16.png</file>
+    </param.icons>
+    <param.summary>This App allows you to download, process and view data relating to snowfall trends in the Basilicata region.</param.summary>
+    <param.description>This App allows you to download, process and view data relating to snowfall trends in the Basilicata region. The data download is performed from the Copernicus project site via the "Climate Data Store Toolbox for MATLAB" ToolBox. The App is highly customizable in the parameters for submitting queries to the DB. A series of complex processing and visualization procedures are carried out locally. To function, the App requires a Matlab version equal to or higher than R2020a, requires the "Climate Data Store Toolbox for MATLAB" ToolBox to be installed, requires a Python version equal to or higher than 3.8 to be installed, requires it to be installed with pip the cdsapi package, and finally requires you to enter the login credentials for your Copernicus system account at the first start.</param.description>
+    <param.screenshot>${PROJECT_ROOT}\logo.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>23.2</item>
+    </param.products.version>
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>f140771f-149b-4e59-b611-e797593d52c6</param.guid>
+    <unset>
+      <param.company />
+      <param.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\frontend\WelcomeScreen.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\climateDataStoreDownloadAsync.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\climateDataStoreDownloadFuture.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\cdsapi_Client.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\cdsapi_Factory.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\cdsapi_Result.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\getUserDirectory.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\setupCDSAPIIfNeeded.m</file>
+      <file>C:\Users\stolf\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes\Climate Data Store Toolbox for MATLAB\internal\setupPythonIfNeeded.m</file>
+    </fileset.depfun>
+    <fileset.resources>
+      <file>C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\backend</file>
+      <file>C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\frontend</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection" name="dist" optional="false">C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2023b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
