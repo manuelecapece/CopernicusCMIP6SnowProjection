@@ -70,6 +70,7 @@ if (~isInApp)
 
     cd('..\')
 
+    disp(downloadedFilePaths)
     pathDataset = strcat('dataset/',downloadedFilePaths(1));
     %pathJson = strcat('dataset/',downloadedFilePaths(2));
     %pathPNG = strcat('dataset/',downloadedFilePaths(3));

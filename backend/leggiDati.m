@@ -1,15 +1,18 @@
-function [time,lat,lon,snw] = leggiDati(pathDataset)
+function [time,lat,lon,snw] = leggiDati(pathToDatasetFolder, datasetName, pathToBackend)
 %Restituisce i dati che servono contenuti nel dataSet netCDF
 
 try 
-    ncid = netcdf.open(pathDataset);
+    cd(pathToDatasetFolder);
+    copyfile(pathToDatasetFolder, fullfile(pathToDatasetFolder, '..'));
+    cd("..");
+    ncid = netcdf.open(datasetName);
     % disp(newline)
-    % ncdisp(pathDataset)
+    % ncdisp(pathToDataset)
     timeId = netcdf.inqVarID(ncid,'time');
     latId = netcdf.inqVarID(ncid,'lat');
     lonId = netcdf.inqVarID(ncid,'lon');
     
-    ncInfo = ncinfo(pathDataset);
+    ncInfo = ncinfo(datasetName);
     variableNames = {ncInfo.Variables.Name};
     n = size(variableNames,2);
     snwId = -1;
@@ -41,9 +44,11 @@ try
     lon = netcdf.getVar(ncid,lonId);
     snw = netcdf.getVar(ncid,snwId);
     netcdf.close(ncid);
+    cd(pathToBackend);
 catch exception
-    netcdf.close(ncid);
     error(exception.message, exception.identifier);
+    netcdf.close(ncid);
+    cd(pathToBackend);
 end
 
 end
