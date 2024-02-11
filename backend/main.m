@@ -1,7 +1,7 @@
 clear variables;
 close all;
 clc;
-test=false;
+test = false;
 %% Richiesta API modello projections-cmip6
 
 %Fai versione grafico con sublpot grafico ad area e grafico a barre
