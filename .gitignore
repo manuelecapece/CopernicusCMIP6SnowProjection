@@ -1,3 +1,5 @@
 backend/dataset/*
 Parte compilativa/~$Presentazione MTOT.pptx
 *.asv
+
+!backend/dataset/log.txt
