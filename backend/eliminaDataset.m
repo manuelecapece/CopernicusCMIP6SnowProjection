@@ -1,5 +1,5 @@
 function eliminaDataset(isInApp, path1, path2)
-%ripulisce la cartella dataset dai dataset scaricati con le richieste
+% Ripulisce la cartella dataset dai dataset scaricati con le richieste
 
 if (~isInApp)
     cd('dataset\');
@@ -15,7 +15,12 @@ subfolders = dir(currentDirectory); % Ottieni la lista delle cartelle nella cart
 for i = 1:numel(subfolders)
     if subfolders(i).isdir && ~strcmp(subfolders(i).name, '.') && ~strcmp(subfolders(i).name, '..')
         subfolderPath = fullfile(currentDirectory, subfolders(i).name);
-        rmdir(subfolderPath, 's'); % Elimina la cartella e tutti i suoi contenuti
+        % Elimina la cartella e tutti i suoi contenuti (file e sottocartelle)
+        rmdir(subfolderPath, 's');
+    elseif ~subfolders(i).isdir
+        % Se non è una cartella, ma un file, elimina direttamente il file
+        filePath = fullfile(currentDirectory, subfolders(i).name);
+        delete(filePath); % Elimina il file
     end
 end
 
