@@ -1,6 +1,10 @@
 function [time,lat,lon,snw] = leggiDati(pathToDatasetFolder, datasetName, pathToBackend)
 %Restituisce i dati che servono contenuti nel dataSet netCDF
 
+fprintf('pathToDatasetFolder: \n\t%s\n', pathToDatasetFolder);
+fprintf('datasetName: \n\t%s\n', datasetName);
+fprintf('pathToBackend: \n\t%s\n', pathToBackend);
+
 try 
     cd(pathToDatasetFolder);
     copyfile(pathToDatasetFolder, fullfile(pathToDatasetFolder, '..'));

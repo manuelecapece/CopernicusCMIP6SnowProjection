@@ -4,7 +4,7 @@ function [esperimento,variabile,startYear,endYear,modello] = caricaRichiestaDiPr
 %variables   = ["snow_depth","snowfall_flux","surface_snow_amount"];
 
 %Cambia richiesta qui
-query = 11;
+query = 8;
 
 switch query
     case 1
@@ -66,8 +66,8 @@ switch query
     case 7
         esperimento = 4;
         variabile = 3;
-        startYear = 2015;
-        endYear = 2017;
+        startYear = 2025;
+        endYear = 2100;
         modello = 2;
     case 8
         esperimento = 3;
@@ -120,11 +120,11 @@ switch query
         % esperimento = 8;
         % modello = 2; %EC-Earth3-Veg-LR (Europe)
     case 11
-        esperimento = 2;
+        esperimento = 1;
         variabile = 1;
-        startYear = 2016;
-        endYear = 2017;
-        modello = 3;
+        startYear = 2015;
+        endYear = 2024;
+        modello = 1;
 end
 
 end

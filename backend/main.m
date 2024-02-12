@@ -41,7 +41,7 @@ if(~test)
     disp('*********************************************************************************************')
     disp(newline)
 else
-    pathDataset='dataset/projections-cmip6-20240208050333\snw_LImon_EC-Earth3-Veg-LR_ssp370_r1i1p1f1_gr_20150116-21001216_v20201123.nc';
+    pathDataset = 'dataset/projections-cmip6-20240208050333\snw_LImon_EC-Earth3-Veg-LR_ssp370_r1i1p1f1_gr_20150116-21001216_v20201123.nc';
 end
 
 %% Elaborazione dei dati
@@ -49,7 +49,17 @@ end
 %Lettura dati
 disp('*****************************************************')
 disp('*                Import dei dati                    *')
-[time,lat,lon,snw] = leggiDati(pathDataset);
+
+fprintf('pathDataset: \n\t%s\n', pathDataset);
+pathToBackend = 'C:\Git\CopernicusCMIP6SnowProjection\frontend\..\backend';
+
+stringhe = strsplit(pathDataset,'\');
+pathFolderDataset = stringhe{1};
+datasetName = stringhe{2};
+pathToDatasetFolder = strcat('\\?\C:\Git\CopernicusCMIP6SnowProjection\frontend\..\backend\',pathFolderDataset);
+
+[time,lat,lon,snw] = leggiDati(pathToDatasetFolder, datasetName, pathToBackend);
+
 disp('*****************************************************')
 disp(newline)
 dim = size(snw);
@@ -65,4 +75,5 @@ plotDati(snow_basilicata,variable,time,years_string, false);
 %% Pulizia cartella contente i dataSet scaricati con le query
 
 eliminaDataset(false);
+
 
