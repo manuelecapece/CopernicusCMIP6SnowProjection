@@ -20,18 +20,6 @@ if(isempty(lat_basilicata) || isempty(lon_basilicata))
 end
 
 %Filtraggio su latitudini e longitudini
-
-% snw_bas = snw .* maschera_lon_bas;
-% snw_bas = snw_bas .* maschera_lat_bas';
-% zeroRows = all(snw_bas(:,:,1) == 0, 2);
-% snw_bas(zeroRows, :,:) = [];
-% zeroColumns = all(snw_bas(:,:,1) == 0, 1);
-% snw_bas(:, zeroColumns,:) = [];
-
-% indici_lat_bas = find(lat == lat_basilicata);
-% indici_lon_bas = find(lon == lon_basilicata);
-% snw_bas = snw(indici_lon_bas,indici_lat_bas,:);
-
 snw_bas = snw(maschera_lon_bas,maschera_lat_bas,:);
 
 disp(['Dimensioni matrice filtrata sn_bas : ' num2str(size(snw_bas))]);
