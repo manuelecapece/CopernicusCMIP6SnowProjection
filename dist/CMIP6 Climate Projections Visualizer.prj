@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="791521968" file="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist\CMIP6 Climate Projections Visualizer.prj" location="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist" name="CMIP6 Climate Projections Visualizer" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="37147750" file="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist\CMIP6 Climate Projections Visualizer.prj" location="C:\Users\stolf\dev\Progetto MTOT\CopernicusCMIP6SnowProjection\dist" name="CMIP6 Climate Projections Visualizer" target="target.mlapps" target-name="Package App">
     <param.appname>CMIP6 Climate Projections Visualizer</param.appname>
     <param.authnamewatermark>Michael Pio Stolfi &amp; Manuele Capece</param.authnamewatermark>
     <param.email>michaelpio.stolfi@studenti.unibas.it, manuele.capece@studenti.unibas.it</param.email>
@@ -13,7 +13,7 @@
     <param.summary>This App allows you to download, process and view data relating to snowfall trends in the Basilicata region.</param.summary>
     <param.description>This App allows you to download, process and view data relating to snowfall trends in the Basilicata region. The data download is performed from the Copernicus project site via the "Climate Data Store Toolbox for MATLAB" ToolBox. The App is highly customizable in the parameters for submitting queries to the DB. A series of complex processing and visualization procedures are carried out locally. To function, the App requires a Matlab version equal to or higher than R2020a, requires the "Climate Data Store Toolbox for MATLAB" ToolBox to be installed, requires a Python version equal to or higher than 3.8 to be installed, requires it to be installed with pip the cdsapi package, and finally requires you to enter the login credentials for your Copernicus system account at the first start.</param.description>
     <param.screenshot>${PROJECT_ROOT}\logo.png</param.screenshot>
-    <param.version>1.3</param.version>
+    <param.version>1.4</param.version>
     <param.products.name />
     <param.products.id />
     <param.products.version />
