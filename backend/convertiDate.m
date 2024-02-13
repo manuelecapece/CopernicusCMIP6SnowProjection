@@ -1,8 +1,6 @@
 function [T] = convertiDate(time,startYear)
 %Converte le date espresse in double in dateTime
 
-%T = datetime(1850,1,1,'Format','MMM-yyyy') + days(time);
-
 n = size(time,1);
 k = 1;
 for i = 1 : 5 : n

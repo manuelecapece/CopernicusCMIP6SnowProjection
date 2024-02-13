@@ -90,6 +90,8 @@ disableDefaultInteractivity(ax)
 
 hold(ax,'off');
 
+%% Altri tipi di grafici disabilitati
+
 % %% Grafico 2 line plot annuale misto line plot mensile
 % 
 % figure();
