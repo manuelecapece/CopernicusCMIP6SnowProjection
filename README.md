@@ -17,6 +17,15 @@ Una volta terminata la fase di configurazione iniziale è possibile aprire il fi
 
 Il toolbox sulla cui base è stato costruito l'applicativo richiederà per la prima volta le credenziali CSAPI. È possibile visitare [How to use the CDS API](https://cds.climate.copernicus.eu/api-how-to) per ulteriori informazioni.
 
+## Screen dell'app
+Content screen
+![](https://github.com/manuelecapece/CopernicusCMIP6SnowProjection/blob/main/dist/screenApp.png)
+
+Esempio di risultato
+![](https://github.com/manuelecapece/CopernicusCMIP6SnowProjection/blob/main/dist/SpessoreNeve.png)
+
+
 ## Licenza
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
